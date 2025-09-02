@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:input="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_success.css')}}">-->
+<!--    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_in.css')}}">-->
+
+    <title>Welcome</title>
+    <script>
+
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function(event) {
+    window.history.go(1);
+    window.history.pushState(null, null, window.location.href);
+};
+    </script>
+</head>
+<body style="position: relative;
+  background: url('http://thecodeplayer.com/u/m/b1.png') no-repeat center center fixed;
+  background-size: cover;
+  min-width: 500px;
+  min-height: 200px;
+  color: #fff;
+  font-family: 'Montserrat';
+  height:100vmax;">
+    <style type="text/css">
+        .span_style{
+        font-size:25px;
+        color:#1AFD9C;
+        }
+    </style>
+    <div id="nav-action" style="position: absolute;
+      width: 27px;
+      height: 27px;
+      top: 30px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 101;
+      padding-top:9px;">
+        <a style="color:white" href="http://127.0.0.1:5000/"><span class="button-text">退出登录</span></a>
+    </div>
+    <span style="color:skyblue;font-size:25px">欢迎访问！</span>
+    <form action="/url_post" method="post" >
+        <div style="width:1000px">
+            <span class="span_style">网页链接图片识别请在此输入图片链接→：</span>
+            <input type="text" name="url" style="width:200px;height:25px" οnmοuseοut="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black" id="test1">
+            <input type="submit" value="开始识别" style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer" >
+            <input type="button" value="清空输入框" style="width:100px;height:30px;background:#FFF380;border:2px solid gold;cursor: pointer" onclick="document.getElementById('test1').value=''"/>
+        </div>
+    </form>
+    <form action="/random_image" method="post" >
+        <div  style="width:1000px">
+            <span class="span_style">请在此输入视频流链接→：</span>
+            <input type="text" name="url" style="width:200px;height:25px" οnmοuseοut="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black" id="test2">
+            <input type="submit" value="开始识别" style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer" >
+            <input type="button" value="清空输入框" style="width:100px;height:30px;background:#FFF380;border:2px solid gold;cursor: pointer" onclick="document.getElementById('test2').value=''"/>
+        </div>
+    </form>
+
+    <form action="/getImg/" method="post" enctype="multipart/form-data">
+        <span style="font-size:25px;color:#59E817;">本地图片上传识别请点下边↓:（图片文件名请勿包含中文）</span><br>
+        <input type="file" name="image" style="font-size:20px;background:#FFCBA4;width:200px;cursor: pointer"><br>
+        <input type="submit" value="开始识别" style="font-size:20px;background:#6AFB92;border:1px solid gold;cursor: pointer">
+    </form>
+    <img src="../static/result/{{img_path}}" οnerrοr=“this.style.display=‘none’” alt=" " width="900" height="800">
+    <img src="../static/result/{{temp}}" alt=" " width="900" height="800">
+</body>
+</html>

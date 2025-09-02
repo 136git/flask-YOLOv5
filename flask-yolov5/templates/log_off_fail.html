@@ -1,0 +1,10 @@
+{% extends 'log_off.html'%}
+
+{% block contentBlock %}
+{% if log_off_fail == 1 %}
+
+    <script>alert("账号或密码错误，注销失败")</script>
+
+{% endif %}
+{% endblock %}
+

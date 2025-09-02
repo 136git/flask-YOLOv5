@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/123.css">
+</head>
+<body>
+    <div id="nav-action" class="logout">
+        <a style="color:blue" href="http://127.0.0.1:5000/"><span class="button-text">退出登录</span></a>
+    </div>
+    <div class="header">
+        <p><img src="../static/art/10.JPG" alt=""></p>
+    </div>
+    <div class="nav">
+        您可以在此界面通过不同方式传入图片或视频数据到后台程序检测后获得结果
+
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../static/art/1.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/2.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/3.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/4.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/6.webp" alt=""></div>
+        </div>
+    </div>
+<!--    <div class="box1">-->
+<!--        <img src="../static/art/7.webp" alt="">-->
+<!--    </div>-->
+    <div class="show_web">
+        <form action="/url_post" method="post" >
+            <span class="span_style">网页链接图片识别请在下方输入图片链接↓：</span><br>
+            <div style="padding-top:10px;">
+                <input type="text" name="url" style="width:320px;height:35px" οnmοuseοut="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black;padding-top:20px;" id="test1"><br>
+            </div>
+            <div class="web_input">
+                <input type="submit" value="开始识别" style="width:120px;height:40px;background:#93FFE8;border:2px solid gold;cursor: pointer;" >
+                <input type="button" value="清空输入框" style="width:120px;height:40px;background:#FFF380;border:2px solid gold;cursor: pointer" onclick="document.getElementById('test1').value=''"/>
+                <p>图片的识别结果将会显示在右侧，请耐心等待！</p>
+
+            </div>
+        </form>
+    </div>
+    <div class="return_pic">
+        <form action="/welcome" method="post" >
+            <input type="submit" value="返回功能页面" class="mybotton" >
+         </form>
+    </div>
+    <div class="result">
+        <p style="color:red;font-size:30px;">{{cord}}</p>
+        <img src="../static/result/res.jpg" alt="">
+    </div>
+
+
+</body>
+</html>

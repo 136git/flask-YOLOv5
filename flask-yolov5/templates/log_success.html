@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎您！{{username}}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_success.css')}}">
+    <script src="{{url_for('static',filename ='../static/js/log_success.js')}}"></script>
+</head>
+<body>
+
+<!--Log out按钮-->
+<div class="bars" id="nav-action">
+    <a style="color:white" href="http://127.0.0.1:5000/"><span class="button-text">Log Out</span></a>
+</div>
+
+<!--正文内容-->
+<form action="/welcome" method="post" style=" text-align: center;">
+            <h1>点击按钮进入主页</h1>
+            <input type="submit" value="进入主页" style="width:300px;height:100px;background:#93FFE8;border:2px solid gold;cursor: pointer;" >
+</form>
+
+
+<article class="container">
+    <h1>用户{{username}}!<br>欢迎使用!</h1>
+</article>
+
+</body>
+</html>

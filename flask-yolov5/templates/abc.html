@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/123.css">
+</head>
+<body>
+    <div id="nav-action" class="logout">
+        <a style="color:blue" href="http://127.0.0.1:5000/"><span class="button-text">退出登录</span></a>
+    </div>
+    <div class="header">
+        <p><img src="../static/art/10.JPG" alt=""></p>
+    </div>
+    <div class="nav">
+        您可以在此界面通过不同方式传入图片或视频数据到后台程序检测后获得结果
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../static/art/1.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/2.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/3.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/4.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/6.webp" alt=""></div>
+        </div>
+    </div>
+<!--    <div class="box1">-->
+<!--        <img src="../static/art/7.webp" alt="">-->
+<!--    </div>-->
+    <div class="picture">
+        <span style="font-size:35px;color:#59E817;">本地图片上传识别请点→:</span>
+        <form action="/picture" method="post" >
+            <input type="submit" value="开始识别" >
+        </form>
+    </div>
+    <div class="web">
+        <form action="/web" method="post" >
+            <span style="font-size:30px;color:#0072E3;">网页链接图片识别请点→:</span>
+            <input type="submit" value="开始识别" class="otherbotton" >
+        </form>
+    </div>
+
+    <div class="source">
+        <form action="/source" method="post" >
+            <span style="font-size:35px;color:#ffaad5;">视频流链接识别请点→:</span>
+            <input type="submit" value="开始识别" class="otherbotton">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome, {{ data}}</title>
+</head>
+<body>
+  <form action="/show_img" method="post">
+      <div  style="width:1000px">
+        <button type="button"  onclick="javascript:location.reload()">刷新页面</button>
+        <span style="font-size:25px;color:#59E817;">请输入想要查看的图片文件名</span><br>
+        <input type="text" name="show" style="width:200px;height:25px" οnmοuseοut="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black" id="test2">
+        <input type="submit" value="查看" style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer" >
+        <input type="button" value="清空输入框" style="width:100px;height:30px;background:#FFF380;border:2px solid gold;cursor: pointer" onclick="document.getElementById('test2').value=''"/>
+      <div>
+  </form>
+  <img src="../static/result/res/{{show}}" alt=" " width="1000" height="800">
+
+  <p>以下图片为检测到可能未牵绳</p>
+  <p style="white-space: pre-line">{{ data}}</p>
+</body>
+</html>

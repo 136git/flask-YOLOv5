@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_in.css')}}">
+    <title>正在注销账户</title>
+</head>
+<body>
+<div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">注销</h2>
+    <!-- 传入后端的内容 -->
+
+    <form class="login-container" method="post" action="/log_off_handle">
+        <p><input type="text" name="username" placeholder="请输入用户名"></p>
+        <p><input type="password" name="password" placeholder="请输入密码"></p>
+        <p><input type="submit" value="点击注销"></p>
+    </form>
+     <a style="color:white" href="http://127.0.0.1:5000/log_in">我要回去登录！</a>
+
+</div>
+<!-- 用于错误信息的弹窗 -->
+{% block contentBlock %}
+{% endblock %}
+</body>
+</html>

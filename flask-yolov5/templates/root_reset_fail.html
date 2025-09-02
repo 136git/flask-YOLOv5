@@ -1,0 +1,11 @@
+{% extends 'root.html'%}
+
+{% block contentBlock %}
+{% if reset_fail == 1 %}
+
+    <script>alert("修改密码失败，请重试！")</script>
+
+{% endif %}
+
+{% endblock %}
+

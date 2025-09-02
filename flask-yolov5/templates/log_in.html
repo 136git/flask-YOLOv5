@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_in.css')}}">
+    <title>用户正在登录</title>
+</head>
+<body>
+<div class="login">
+    <div class="login-triangle"></div>
+    <h2 class="login-header">登录</h2>
+    <!-- 传入后端的内容 -->
+    <form class="login-container" method="post" action="/log_handle">
+        <p><input type="text" name="username" placeholder="请输入用户名"></p>
+        <p><input type="password" name="password" placeholder="请输入密码"></p>
+        <p><input type="submit" value="登录"></p>
+    </form>
+     <a style="color:white" href="http://127.0.0.1:5000/register">还没有账户(注册一个新的账号)！</a></br>
+     <a style="color:white" href="http://127.0.0.1:5000/log_off">点击这里注销账户！</a>
+</div>
+<!-- 用于错误信息的弹窗 -->
+{% block contentBlock %}
+{% endblock %}
+</body>
+</html>

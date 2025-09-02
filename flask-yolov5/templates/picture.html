@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/123.css">
+</head>
+<body>
+    <div id="nav-action" class="logout">
+        <a style="color:blue" href="http://127.0.0.1:5000/"><span class="button-text">退出登录</span></a>
+    </div>
+    <div class="header">
+        <p><img src="../static/art/10.JPG" alt=""></p>
+    </div>
+    <div class="nav">
+        您可以在此界面通过不同方式传入图片或视频数据到后台程序检测后获得结果
+
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../static/art/1.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/2.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/3.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/4.bmp" alt=""></div>
+            <div class="swiper-slide"><img src="../static/art/6.webp" alt=""></div>
+        </div>
+    </div>
+<!--    <div class="box1">-->
+<!--        <img src="../static/art/7.webp" alt="">-->
+<!--    </div>-->
+    <div class="show_pic">
+        <form action="/getImg" method="post" enctype="multipart/form-data">
+            <span style="font-size:25px;color:#59E817;">本地图片上传识别请点下边↓:（图片文件名请勿包含中文）</span><br>
+            <input type="file" name="image" style="font-size:23px;background:#FFCBA4;width:230px;cursor: pointer"><br>
+            <input type="submit" value="开始识别" style="font-size:23px;background:#6AFB92;border:1px solid gold;cursor: pointer">
+            <p>图片的识别结果将会显示在右侧，请耐心等待！</p>
+        </form>
+    </div>
+    <div class="return_pic">
+        <form action="/welcome" method="post" >
+            <input type="submit" value="返回功能页面" >
+         </form>
+    </div>
+    <div class="result">
+        <p style="color:red;font-size:30px;">{{cord}}</p>
+        <img src="../static/result/{{img_path}}" οnerrοr=“this.style.display=‘none’” alt=" " width="900" height="800">
+    </div>
+
+    
+
+</body>
+</html>

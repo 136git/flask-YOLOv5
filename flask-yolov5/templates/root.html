@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_in.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/log_success.css')}}">
+    <script src="{{url_for('static',filename ='../static/js/log_success.js')}}"></script>
+    <title>管理员</title>
+</head>
+<body>
+<style type="text/css">
+    .mytable{
+    width:600px;
+    height:100px;
+    margin: 0 auto;
+    }
+    .mybotton{
+    width:100px;
+    height:30px;
+    background:#93FFE8;
+    border:2px solid gold;
+    cursor: pointer;
+    }
+</style>
+<!--Log out按钮-->
+<div class="bars" id="nav-action">
+    <a style="color:white" href="http://127.0.0.1:5000/"><span class="button-text">退出 登录</span></a>
+</div>
+<!--正文内容-->
+<div style=" text-align:center;padding-top:20px;">
+    <form action="/welcome" method="post" >
+            <h2>点击按钮进入主页<input type="submit" value="进入主页" class="mybotton" ></h2>
+    </form>
+</div>
+
+<div style=" padding-top:25px;">
+    <table border="2" class="mytable">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>用户密码</th>
+                <th>修改用户密码</th>
+                <th>删除账户</th>
+            </tr>
+        </thead>
+    <tbody>
+    {% for item in data %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{item[1]}}</td>
+            <td>
+                <form action="/reset_handle" method="post">
+                  <input type="hidden" name="value" value="{{item[0]}}">
+                  <input type="password" name="repassword" >
+                  <button class="btn btn-outline-primary btn-sm" type="submit"
+                          name="submit_btn" value="favorites"
+                          data-value="{{item[0]}}"
+                          style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer;">
+                            修改密码</button>
+                </form>
+            </td>
+            <td>
+                <form action="/del_handle" method="post">
+                    <input type="hidden" name="value" value="{{item[0]}}">
+                    <button class="btn btn-outline-primary btn-sm"
+                            type="submit"
+                            name="submit_btn"
+                            value="favorites"
+                            data-value="{{item[0]}}"
+                            style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer;" >
+                            删除账户</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+
+<div class="login">
+    <h2 class="login-header">创建一个新的账户</h2>
+    <form class="login-container" method="post" action="/root_register">
+        <p><input type="text" name="username" placeholder="请输入要创建的用户名"></p>
+        <p><input type="password" name="password" placeholder="请输入密码"></p>
+        <p><input type="password" name="confirm_password" placeholder="请再次确认您的密码"></p>
+        <p><input type="submit" value="创建账户"></p>
+    </form>
+</div>
+<!--<article class="container">-->
+<!--    <h2>Welcome!<br>管理员{{username}}!</h2>-->
+<!--    <h2>这是已注册的用户账号{{username_list}}</h2>-->
+<!--</article>-->
+{% block contentBlock %}
+{% endblock %}
+</body>
+</html>

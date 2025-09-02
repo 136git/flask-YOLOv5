@@ -1,0 +1,39 @@
+<!doctype html>
+<script>
+
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function(event) {
+    window.history.go(1);
+    window.history.pushState(null, null, window.location.href);
+};
+    </script>
+<form action="/stop_return" method="post" >
+            <input type="submit" value="返回主页" style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer;" >
+             <h2>点击上方按钮返回主页</h2>
+            <h2>请注意！返回主页的同时也会停止后台的检测程序！</h2>
+</form>
+<title>查看结果</title>
+<p>视频流检测结果按照日期分类放在以日期命名的文件夹下</p>
+<p>例：2022-08-07\文件夹下存放的是2022-08-07日检测捕获的图像</p>
+<form action="/stop" method="post">
+        <div  style="width:1000px">
+            <span style="font-size:25px;color:#59E817;">点击下方按钮停止后台检测程序</span><br>
+            <input type="submit" onclick="fun()" value="停止！" style="width:100px;height:30px;background:#93FFE8;border:2px solid gold;cursor: pointer" >
+        </div>
+</form>
+<script>
+    function fun(){
+            alert("后台检测进程已关闭！");
+    }
+</script>
+<p>{{word}}</p>
+<hr>
+<ul>
+    {% for file in files %}
+        {% if isdir_list[loop.index0] %}
+            <li><a href="{{file + '\\'}}">{{file+ '\\'}}</a></li>
+        {% else %}
+            <li><a href="{{file}}">{{file}}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .swiper-container{
+            width: 640px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .swiper-container img{
+            width: 640px;
+            height: 300px;
+        }
+        .swiper-wrapper{
+            width: 3000px;
+
+            display: flex;
+
+            animation: run 10s linear infinite;
+        }
+        @keyframes run {
+            0%{
+                transform: translateX(0);
+            }
+            10%{
+                transform: translateX(-640px);
+            }
+            25%{
+                transform: translateX(-640px);
+            }
+            35%{
+                transform: translateX(-1280px);
+            }
+            50%{
+                transform: translateX(-1280px);
+            }
+            60%{
+                transform: translateX(-1920px);
+            }
+            75%{
+                transform: translateX(-1920px);
+            }
+            85%{
+                transform: translateX(-2560px);
+            }
+            100%{
+                transform: translateX(-2560px);
+
+            }
+        }
+        .swiper-wrapper:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../static/art/1.bmp">
+            </div>
+            <div class="swiper-slide">
+                <img src="../static/art/1.bmp">
+            </div>
+            <div class="swiper-slide">
+                <img src="../static/art/1.bmp">
+            </div>
+            <div class="swiper-slide">
+                <img src="../static/art/1.bmp">
+            </div>
+            <div class="swiper-slide">
+                <img src="../static/art/1.bmp">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
